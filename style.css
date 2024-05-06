@@ -1,0 +1,682 @@
+:root {
+  --clr-moderate-cyan: hsl(176, 50%, 47%);
+  --clr-dark-cyan: hsl(176, 72%, 28%);
+
+  --clr-black: hsl(0, 0%, 0%);
+  --clr-dark-gray: hsl(0, 0%, 48%);
+  --clr-another-gray: #bbb9b9;
+  --clr-light-gray: hsl(0, 17%, 95%);
+  --clr-white: #fff;
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+
+  --br-sml: 0.5rem;
+  --br-btns: 4rem;
+  --br-circle: 50%;
+
+  --box-shadow: rgba(0, 0, 4px, 4px, 0.5);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Commissioner", sans-serif;
+  font-size: 16px;
+  display: grid;
+  place-items: center;
+  z-index: 100;
+}
+
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+h1 {
+  font-size: 1.3rem;
+  padding-top: 0.1rem;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: var(--fw-700);
+  margin-block: 2rem 0.5rem;
+}
+h3 {
+  margin-bottom: 1.5rem;
+}
+h4 {
+  cursor: pointer;
+}
+h5 {
+  font-size: 2rem;
+}
+
+.total-backers,
+.days-left {
+  border-top: 2px solid var(--clr-light-gray);
+  width: 30%;
+  padding-top: 1rem;
+  margin: 0 auto;
+}
+p {
+  color: var(--clr-dark-gray);
+  line-height: 1.6;
+}
+.container {
+  width: 87%;
+  margin: 0 auto;
+}
+.hero {
+  position: relative;
+}
+picture {
+  position: absolute;
+  z-index: -1;
+}
+.nav-bar {
+  padding-top: 1.5rem;
+}
+.nav-mobile-top-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.nav-bar-mobile {
+  position: relative;
+}
+.nav-bar-mobile .nav-links {
+  background-color: var(--clr-white);
+  width: 100%;
+  margin: 2.2rem auto 0 auto;
+  border-radius: var(--br-sml);
+  display: flex;
+  flex-direction: column;
+  padding-block: 1.92rem;
+  visibility: hidden;
+  position: absolute;
+}
+.nav-bar-mobile .nav-links.active {
+  visibility: visible;
+}
+body.overlay,
+.main-overlay-section1.overlay,
+.main-overlay-section2.overlay,
+.main-overlay-section3.overlay,
+.inset-styles.overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.nav-bar-mobile .nav-links a {
+  color: var(--clr-black);
+  font-weight: var(--fw-700);
+  padding-left: 1.5rem;
+}
+.nav-bar-mobile .nav-links a:not(:last-child) {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--clr-light-gray);
+  padding-bottom: 1.5rem;
+}
+.nav-bar-mobile .nav-links a:not(:first-child) {
+  margin-top: 0.4rem;
+}
+.nav-bar-desktop {
+  visibility: hidden;
+}
+.main-overlay {
+  margin: 7.5rem auto 0 auto;
+  width: 87%;
+}
+
+.back-this-project {
+  margin: 7.5rem auto 0 auto;
+  width: 87%;
+}
+
+.main-overlay > div {
+  border-radius: var(--br-sml);
+  box-shadow: var(--box-shadow);
+  background-color: var(--clr-white);
+  border: 1px solid var(--clr-light-gray);
+  margin-bottom: 1.5rem;
+}
+.main-overlay-section1 {
+  margin-top: 8rem;
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.m-logo {
+  margin-block: -1.8rem 1.5rem;
+}
+.main-overlay-section1 p {
+  margin-block: 1.5rem;
+}
+/*BUTTON STYLES*/
+.main-overlay-section1 .btn-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.main-overlay-section1 .btn-container .btn-cyan {
+  padding-inline: 3rem;
+  flex-basis: 80%;
+}
+button {
+  border-radius: var(--br-btns);
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+.btn-cyan {
+  background-color: var(--clr-moderate-cyan);
+  color: var(--clr-white);
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+.bookmark {
+  background: none;
+  border: none;
+  flex-basis: 20%;
+  position: relative;
+}
+.bookmark img {
+  margin-left: auto;
+}
+.bookmark p {
+  display: none;
+}
+.white-bookmark {
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
+.main-overlay-section2 {
+  text-align: center;
+}
+.main-overlay-section2 p {
+  margin-bottom: 2rem;
+}
+.section2-numbers {
+  margin-bottom: 4rem;
+}
+/*SLIDER STYLES*/
+
+.slider-container {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  border: 0px var(--clr-white) solid; /*this is a bit hacky*/
+  margin-block: -2rem 3rem;
+  border-radius: var(--br-btns);
+  height: 0.8rem;
+}
+.slider-front,
+.slider-back {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: var(--br-btns);
+}
+.slider-back {
+  background-color: var(--clr-light-gray);
+}
+.slider-front {
+  background-color: var(--clr-moderate-cyan);
+  width: 80%; /*we will make this number dynamic in JS */
+}
+.section3-about {
+  margin: 2.5rem 1.5rem;
+}
+.section3-about p {
+  font-size: 0.92rem;
+  margin-bottom: 1.5rem;
+}
+
+.inset-styles {
+  padding: 1.5rem 1.5rem;
+  border-radius: var(--br-sml);
+  box-shadow: var(--box-shadow);
+  background-color: var(--clr-white);
+  border: 1px solid var(--clr-light-gray);
+  margin-block: 1.5rem;
+}
+.main-overlay-section3 .inset-styles.active {
+  background-color: #bbb9b9;
+  border: #bbb9b9;
+}
+
+.slider-container .slider-back.active,
+.bookmark.active {
+  background-color: #b5b2b2;
+}
+.back-this-project .inset-styles {
+  padding-inline: 0;
+}
+
+.pledge {
+  color: var(--clr-moderate-cyan);
+  font-weight: var(--fw-500);
+}
+.numbers-left {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+.select-reward-container .numbers-left p {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  border: none;
+}
+.select-reward-container button {
+  padding: 1rem 2rem;
+}
+.out-of-stock {
+  opacity: 0.3;
+}
+.select-reward-container button.out-of-stock {
+  /*I am not sure if I will keep this here*/
+  background-color: var(--clr-light-gray);
+}
+
+/*BACK THIS PROJECT OVERLAY*/
+.back-this-project {
+  position: absolute;
+  left: 6.5%;
+  top: 0;
+  background-color: var(--clr-white);
+  border-radius: var(--br-sml);
+  padding: 1.5rem;
+  display: none;
+}
+.active {
+  display: block;
+}
+.x {
+  margin-left: auto;
+  margin-bottom: -1.4rem;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+  /*visibility: hidden;*/
+  /*display: none; we can't use this for the larger sizes as we already have
+  a display property on them*/
+}
+.circle-select-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.circle-select-line .circle {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: var(--br-circle);
+  border: 1px solid var(--clr-light-gray);
+  margin-inline: 1.5rem 1rem;
+  display: grid;
+  place-items: center;
+}
+.circle-select-line .selected-dot {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: var(--br-circle);
+  background-color: var(--clr-moderate-cyan);
+}
+.circle-select-line .circle-line,
+.inset-styles .content {
+  padding-inline: 0.5rem;
+}
+.inset-styles .inset-title-items {
+  margin-bottom: -4.5rem;
+}
+
+.inset-styles-desc {
+  padding-inline: 2rem 1rem;
+}
+.back-this-project h3 {
+  font-size: 1.4rem;
+}
+.back-this-project p {
+  font-size: 0.9rem;
+}
+.bamboo-line {
+  display: flex;
+}
+hr {
+  display: none;
+}
+.numbers-left-desktop-btp {
+  visibility: hidden;
+}
+.numbers-left-mobile-btp {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  padding-left: 2rem;
+}
+.numbers-left-mobile-btp h5 {
+  font-size: 1rem;
+  margin-right: 0.4rem;
+}
+.inset-no-reward.active,
+.inset-bamboo.active,
+.inset-black.active,
+.inset-mahogany.active {
+  border: 2px solid var(--clr-moderate-cyan);
+}
+.btn-transparent {
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+  font-weight: var(--fw-700);
+  font-size: 0.82rem;
+  padding: 0;
+  border: 2px solid var(--clr-light-gray);
+  flex-basis: 40%;
+  margin-right: 0.5rem;
+  position: relative;
+}
+.btn-transparent input {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  border: none;
+  width: 50px;
+  font-family: inherit;
+  text-align: center;
+  outline: none;
+  font-weight: var(--fw-700);
+}
+.btn-transparent h6 {
+  position: absolute;
+  top: 13px;
+  left: 20px;
+  z-index: 2;
+  color: var(--clr-light-gray);
+  font-size: 1rem;
+  font-weight: var(--fw-700);
+}
+.btn-transparent span {
+  color: var(--clr-light-gray);
+}
+.enter-pledge-container {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 2px solid var(--clr-light-gray);
+}
+.enter-pledge-container .btn-container {
+  margin-bottom: 0;
+  display: flex;
+}
+.enter-pledge-container .btn-cyan {
+  flex-basis: 40%;
+  font-size: 0.82rem;
+}
+.enter-pledge-container .btn-transparent {
+  flex-basis: 40%;
+  font-size: 0.82rem;
+}
+.enter-pledge-container p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/*THANKS OVERLAY*/
+.thanks-overlay {
+  position: absolute;
+  width: 90%;
+  left: 4.5%;
+  top: 9rem;
+  background-color: var(--clr-white);
+  border-radius: var(--br-sml);
+  padding: 1.5rem;
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  z-index: 4;
+}
+.thanks-overlay.active {
+  visibility: visible;
+}
+.thanks-overlay .checkmark,
+.thanks-overlay p {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+#clear-local-storage {
+  display: none;
+}
+
+@media (min-width: 568px) {
+  main {
+    width: 600px;
+  }
+  .main-overlay {
+    max-width: 500px;
+    margin: -3rem auto 0 auto !important;
+  }
+
+  .back-this-project {
+    max-width: 500px;
+    margin: 16rem auto 0 auto !important;
+    margin-left: -6rem !important;
+  }
+
+  .container {
+    width: 77%;
+  }
+
+  .nav-bar-mobile {
+    visibility: hidden;
+  }
+  .nav-bar-desktop {
+    visibility: visible;
+    display: flex;
+    justify-content: space-between;
+    color: var(--clr-white);
+    padding-top: 0;
+    margin-top: -1rem;
+  }
+  .nav-links a {
+    color: var(--clr-white);
+    margin-left: 1.5rem;
+    font-size: 0.73rem;
+  }
+  .nav-bar-desktop .logo img {
+    width: 80%;
+  }
+  br {
+    display: none;
+  }
+  hr {
+    display: block;
+  }
+  .hide {
+    visibility: hidden;
+    margin-bottom: -7rem; /*this is hacky and is not good if someone keeps
+    clicking on the circle as it removes the 7rem each time*/
+    /*display: none; we can't use this for the enter-pledge-containers
+    on the larger sizes as we already have a display property on them*/
+  }
+  .main-overlay-section1 .btn-container {
+    width: 110%;
+    gap: 8rem;
+  }
+  .main-overlay-section1 .btn-container .btn-cyan {
+    padding-inline: 0;
+    flex-basis: 40%;
+  }
+  .main-overlay-section1 p {
+    font-size: 0.9rem;
+  }
+  .bookmark {
+    border-radius: var(--br-btns);
+    background-color: var(--clr-light-gray);
+    display: flex;
+    align-items: center;
+    flex-basis: 35%;
+  }
+
+  .bookmark p {
+    display: block;
+    font-weight: var(--fw-700);
+    padding-inline: 1rem 2rem;
+    margin: 0;
+  }
+
+  .section2-numbers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 2rem;
+    padding-left: 2rem;
+  }
+  .main-overlay-section2 h2 {
+    margin-block: 0;
+  }
+  .main-overlay-section2 p {
+    margin-block: 0;
+  }
+
+  .total-backers,
+  .days-left {
+    border-top: 0;
+    border-left: 2px solid var(--clr-light-gray);
+    padding-top: 0;
+  }
+  .slider-container {
+    margin-block: -4rem 3rem;
+  }
+  .inset-title {
+    display: flex;
+    justify-content: space-between;
+  }
+  .select-reward-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .numbers-left {
+    margin-bottom: 0;
+  }
+  /*BACK THIS PROJECT OVERLAY*/
+  .back-this-project {
+    left: 25%;
+    transform: translateY(-25%);
+    top: 6rem;
+    padding: 2rem;
+  }
+  .x {
+    margin-left: auto;
+  }
+  .back-this-project p {
+    margin-left: 2.3rem;
+    font-size: 0.79rem;
+  }
+  .back-this-project .main-p {
+    margin-left: 0;
+  }
+  .back-this-project .circle-line {
+    display: flex;
+  }
+  .back-this-project .circle-select-line {
+    margin-bottom: 1rem;
+  }
+  .back-this-project .pledge {
+    margin-left: 1rem;
+  }
+  .inset-styles .inset-title-items {
+    margin-bottom: 0;
+  }
+
+  .circle-line.mahogany-title p {
+    margin-left: 1rem;
+  }
+  .numbers-left-mobile-btp {
+    display: none;
+  }
+  .numbers-left-desktop-btp {
+    visibility: visible;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    padding-right: 1.5rem;
+  }
+  .numbers-left-desktop-btp p {
+    margin-left: 0;
+  }
+  .numbers-left-desktop-btp h5 {
+    font-size: 1rem;
+    margin-right: 0.4rem;
+  }
+
+  .enter-pledge-container {
+    border-bottom: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .enter-pledge-container .btn-container {
+    gap: 0;
+    justify-content: end;
+    width: 70%;
+  }
+
+  .enter-pledge-container p {
+    text-align: left;
+    margin: 1rem 0;
+  }
+
+  .thanks-overlay {
+    max-width: 450px;
+    left: 13%;
+    top: 17rem;
+    /*visibility: hidden;*/
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    width: 1200px;
+    /*margin: 0 auto;*/
+  }
+  .main-overlay {
+    max-width: 600px;
+    margin: 13rem auto 0 auto !important;
+  }
+
+  .back-this-project {
+    max-width: 600px;
+    margin: 22rem auto 0 auto !important;
+  }
+  hr {
+    display: none;
+  }
+
+  .thanks-overlay {
+    left: 31%;
+    top: 25rem;
+  }
+}

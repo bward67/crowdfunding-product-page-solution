@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Crowdfunding product page</title>
+  </head>
+  <body>
+    <main>
+      <div class="hero">
+        <picture>
+          <source
+            media="(max-width: 568px)"
+            srcset="images/image-hero-mobile.jpg"
+            alt=""
+          />
+          <img
+            src="images/image-hero-desktop.jpg"
+            alt=""
+            class="hero-desktop-img"
+          />
+        </picture>
+
+        <nav class="nav-bar nav-bar-mobile container">
+          <div class="nav-mobile-top-line">
+            <div class="logo">
+              <img src="images/logo.svg" alt="" />
+            </div>
+            <div class="mobile-menu-btn">
+              <img
+                src="images/icon-hamburger.svg"
+                alt=""
+                class="hamburger-icon"
+              />
+            </div>
+          </div>
+          <div class="nav-links">
+            <a href="#">About</a>
+            <a href="#">Discover</a>
+            <a href="#">GetStarted</a>
+          </div>
+        </nav>
+
+        <nav class="nav-bar nav-bar-desktop container">
+          <div class="logo">
+            <img src="images/logo.svg" alt="" />
+          </div>
+          <div class="nav-links">
+            <a href="#">About</a>
+            <a href="#">Discover</a>
+            <a href="#">GetStarted</a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="main-overlay">
+        <div class="main-overlay-section1">
+          <div class="m-logo">
+            <img src="images/logo-mastercraft.svg" alt="" />
+          </div>
+          <h1>Mastercraft Bamboo <br />Monitor Riser</h1>
+          <p>
+            A beautifully handcrafted monitor stand to reduce neck and eye
+            strain.
+          </p>
+          <div class="btn-container">
+            <button class="btn-cyan" id="back-this-project-btn">
+              Back this project
+            </button>
+            <button class="bookmark">
+              <img
+                src="images/icon-bookmark.svg"
+                alt=""
+                class="bookmark-icon"
+              />
+              <img
+                src="images/whiteBookmark.svg"
+                alt=""
+                class="white-bookmark"
+              />
+              <p class="bookmark-text">Bookmark</p>
+            </button>
+          </div>
+        </div>
+        <div class="main-overlay-section2">
+          <div class="section2-numbers">
+            <div class="money-backed">
+              <h2 data-total-money="89,914">$</h2>
+              <p>of $100,000 backed</p>
+            </div>
+            <div class="total-backers">
+              <h2 data-total-backers="5007"></h2>
+              <p>total backers</p>
+            </div>
+            <div class="days-left">
+              <h2 id="days-left"></h2>
+              <p>days left</p>
+            </div>
+          </div>
+
+          <!--I TRIED THIS BUT I COULD NOT MANIPULATE THE STYLES AS THE DESIGN
+          IN THIS CHALLENGE REQUIRED but it was fun to have a go at it
+          <div>
+            <progress value="70" max="100" class="progress-bar"></progress>
+          </div>
+          -->
+          <!--SLIDER -->
+          <div class="slider-container">
+            <div class="slider-back"></div>
+            <div class="slider-front"></div>
+          </div>
+        </div>
+        <div class="main-overlay-section3">
+          <div class="section3-about">
+            <h3>About this project</h3>
+            <p>
+              The Mastercraft Bamboo Monitor Riser is a sturdy and stylish
+              platform that elevates your screen to a more comfortable viewing
+              height. Placing your monitor at eye level has the potential to
+              improve your posture and make you more comfortable while at work,
+              helping you stay focused on the task at hand.
+            </p>
+            <p>
+              Featuring artisan craftsmanship, the simplicity of design creates
+              extra desk space below your computer to allow notepads, pens, and
+              USB sticks to be stored under the stand.
+            </p>
+            <div class="inset-styles bamboo">
+              <div class="inset-title">
+                <h4>Bamboo Stand</h4>
+                <p class="pledge">Pledge $25 or more</p>
+              </div>
+              <p class="content">
+                You get an ergonomic stand made of natural bamboo. You've helped
+                us launch our promotional campaign, and you’ll be added to a
+                special Backer member list.
+              </p>
+              <div class="select-reward-container">
+                <div class="numbers-left">
+                  <h5 id="bamboo-left-main" data-bamboo-main></h5>
+                  <p>left</p>
+                </div>
+                <button
+                  class="btn-cyan select-reward-btn-bamboo bamboo select-reward"
+                >
+                  Select Reward
+                </button>
+              </div>
+            </div>
+            <div class="inset-styles black">
+              <div class="inset-title">
+                <h4>Black Edition Stand</h4>
+                <p class="pledge">Pledge $75 or more</p>
+              </div>
+              <p>
+                You get a Black Special Edition computer stand and a personal
+                thank you. You’ll be added to our Backer member list.
+              </p>
+              <div class="select-reward-container">
+                <div class="numbers-left">
+                  <h5 id="black-left-main" data-black-main="64"></h5>
+                  <p>left</p>
+                </div>
+                <button
+                  class="btn-cyan select-reward-btn-black black select-reward"
+                >
+                  Select Reward
+                </button>
+              </div>
+            </div>
+            <div class="inset-styles mahogany">
+              <div class="inset-title">
+                <h4>Mahogany Special Edition</h4>
+                <p class="pledge">Pledge $200 or more</p>
+              </div>
+              <p>
+                You get two Special Edition Mahogany stands, a Backer T-Shirt,
+                and a personal thank you. You’ll be added to our Backer member
+                list. Shipping is included.
+              </p>
+              <div class="select-reward-container">
+                <div class="numbers-left">
+                  <h5 id="mahogany-left-main" data-mahogany-main="1"></h5>
+                  <p>left</p>
+                </div>
+                <button
+                  class="btn-cyan select-reward-btn-mahogany mahogany select-reward"
+                >
+                  Select Reward
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="clear-local-storage">Clear Local Storage</button>
+        <!--SO IT WORKS
+          <button><img src="images/whiteBookmark.svg" alt="" /></button>-->
+      </div>
+      <div class="back-this-project overlay">
+        <img src="images/icon-close-modal.svg" alt="" class="x" />
+        <h3>Back this project</h3>
+        <p class="main-p">
+          Want to support us in bringing Mastercraft Bamboo Monitor Riser out in
+          the world?
+        </p>
+
+        <div
+          class="inset-styles inset-no-reward inset no-reward"
+          id="scroll-to-no-reward"
+        >
+          <div class="inset-title">
+            <div class="circle-select-line">
+              <div class="circle" id="no-reward-circle">
+                <div class="circle-active-no-reward circle-active"></div>
+              </div>
+              <div class="circle-line">
+                <h4>Pledge with no reward</h4>
+                <p class="pledge"></p>
+              </div>
+            </div>
+            <div class="numbers-left-desktop-btp">
+              <h5></h5>
+              <p></p>
+            </div>
+          </div>
+
+          <p class="inset-styles-desc">
+            Choose to support us without a reward if you simply believe in our
+            project. As a backer, you will be signed up to receive product
+            updates via email.
+          </p>
+          <div class="numbers-left-mobile-btp">
+            <h5></h5>
+            <p></p>
+          </div>
+
+          <!--WE WILL ADD THIS IN JS-->
+          <template id="no-reward" data-item="no-reward">
+            <div class="enter-pledge-container no-reward">
+              <p>Enter your pledge</p>
+              <div class="btn-container">
+                <button class="btn-transparent">
+                  <h6>$</h6>
+
+                  <input type="number" placeholder="" id="input-no-reward" />
+                </button>
+
+                <button
+                  class="btn-cyan continue-btn no-reward"
+                  id="continue-btn"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </template>
+          <!--END OF WHAT WE WILL ADD IN JS-->
+        </div>
+
+        <div
+          class="inset-styles inset-bamboo inset bamboo"
+          id="scroll-to-bamboo"
+        >
+          <div class="inset-title inset-title-items">
+            <div class="circle-select-line">
+              <div class="circle" id="bamboo-circle">
+                <div class="circle-active-bamboo circle-active"></div>
+              </div>
+              <div class="circle-line bamboo-title">
+                <h4>Bamboo Stand</h4>
+                <p class="pledge">Pledge $25 or more</p>
+              </div>
+            </div>
+            <div class="numbers-left-desktop-btp">
+              <h5 id="bamboo-left-overlay" data-bamboo-overlay></h5>
+              <p>left</p>
+            </div>
+          </div>
+
+          <p class="inset-styles-desc">
+            You get an ergonomic stand made of natural bamboo. You've helped us
+            launch our promotional campaign, and you’ll be added to a special
+            Backer member list.
+          </p>
+          <div class="numbers-left-mobile-btp">
+            <h5 id="bamboo-left-mobile-overlay" data-bamboo-mobile-overlay></h5>
+            <p>left</p>
+          </div>
+
+          <!--WE WILL ADD THIS IN JS-->
+          <template id="bamboo" data-item="bamboo">
+            <div class="enter-pledge-container bamboo">
+              <p>Enter your pledge</p>
+              <div class="btn-container">
+                <button class="btn-transparent">
+                  <h6>$</h6>
+
+                  <input type="number" placeholder="" id="input-bamboo" />
+                </button>
+
+                <button class="btn-cyan continue-btn bamboo" id="continue-btn">
+                  Continue
+                </button>
+              </div>
+            </div>
+          </template>
+          <!--END OF WHAT WE WILL ADD IN JS-->
+        </div>
+
+        <div class="inset-styles inset-black inset black" id="scroll-to-black ">
+          <div class="inset-title inset-title-items">
+            <div class="circle-select-line">
+              <div class="circle" id="black-circle">
+                <div class="circle-active-black circle-active"></div>
+              </div>
+              <div class="circle-line black-title">
+                <h4>Black Edition Stand</h4>
+                <p class="pledge">Pledge $75 or more</p>
+              </div>
+            </div>
+
+            <div class="numbers-left-desktop-btp">
+              <h5 id="black-left-overlay" data-black-overlay></h5>
+              <p>left</p>
+            </div>
+          </div>
+          <p class="inset-styles-desc">
+            You get a Black Special Edition computer stand and a personal thank
+            you. You’ll be added to our Backer member list. Shipping is
+            included.
+          </p>
+          <div class="numbers-left-mobile-btp">
+            <h5 id="black-left-mobile-overlay"></h5>
+            <p>left</p>
+          </div>
+
+          <!--WE WILL ADD THIS IN JS
+          and just what is inside the template will appear in the elements
+        and they will appear after the template-->
+          <template id="black" data-item="black">
+            <div class="enter-pledge-container black">
+              <p>Enter your pledge</p>
+              <div class="btn-container">
+                <button class="btn-transparent">
+                  <h6>$</h6>
+
+                  <input type="number" placeholder="" id="input-black" />
+                </button>
+
+                <button class="btn-cyan continue-btn black" id="continue-btn">
+                  Continue
+                </button>
+              </div>
+            </div>
+          </template>
+          <!--END OF WHAT WE WILL ADD IN JS-->
+        </div>
+        <div
+          class="inset-styles inset-mahogany inset mahogany"
+          id="scroll-to-mahogany "
+        >
+          <div class="inset-title inset-title-items">
+            <div class="circle-select-line">
+              <div class="circle" id="mahogany-circle">
+                <div class="circle-active-mahogany circle-active"></div>
+              </div>
+              <div class="circle-line mahogany-title">
+                <h4>
+                  Mahogany Special
+                  <hr />
+                  Edition
+                </h4>
+                <p class="pledge">Pledge $200 or more</p>
+              </div>
+            </div>
+
+            <div class="numbers-left-desktop-btp">
+              <h5 id="mahogany-left-overlay" data-mahogany-overlay></h5>
+              <p>left</p>
+            </div>
+          </div>
+          <p class="inset-styles-desc">
+            You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
+            personal thank you. You’ll be added to our Backer member list.
+            Shipping is included.
+          </p>
+          <div class="numbers-left-mobile-btp">
+            <h5
+              id="mahogany-left-mobile-overlay"
+              data-mahogany-mobile-overlay
+            ></h5>
+            <p>left</p>
+          </div>
+
+          <!--WE WILL ADD THIS IN JS-->
+          <template id="mahogany" data-item="mahogany">
+            <div class="enter-pledge-container mahogany">
+              <p>Enter your pledge</p>
+              <div class="btn-container">
+                <button class="btn-transparent">
+                  <h6>$</h6>
+
+                  <input type="number" placeholder="" id="input-mahogany" />
+                </button>
+
+                <button
+                  class="btn-cyan continue-btn mahogany"
+                  id="continue-btn"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </template>
+          <!--END OF WHAT WE WILL ADD IN JS-->
+        </div>
+      </div>
+
+      <div class="thanks-overlay" id="scroll-to-thanks-overlay">
+        <div class="checkmark">
+          <img src="images/icon-check.svg" alt="" />
+        </div>
+        <h3>Thanks for your support!</h3>
+        <p>
+          Your pledge brings us one step closer to sharing Mastercraft Bamboo
+          Monitor Riser worldwide. You will get an email once our campaign is
+          completed.
+        </p>
+        <button class="btn-cyan" id="got-it-btn">Got it!</button>
+      </div>
+    </main>
+  </body>
+  <script src="app.js"></script>
+</html>
